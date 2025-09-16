@@ -37,45 +37,42 @@
         }
 
         .system-header h1 {
-            font-size: 32px;
-            font-weight: 700;
+            font-size: 2.5rem;
             margin-bottom: 10px;
         }
 
         .system-header p {
-            font-size: 16px;
-            opacity: 0.9;
+            font-size: 1.1rem;
+            opacity: 0.8;
         }
 
-        .tabs-container {
+        .tabs {
             display: flex;
-            background: #f6f6f6;
-            border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            border-bottom: 2px solid #e0e0e0;
+            background-color: #f5f5f7;
         }
 
         .tab-button {
             flex: 1;
-            padding: 20px;
-            background: transparent;
-            border: none;
-            font-size: 16px;
-            font-weight: 600;
-            color: #666;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #8e8e93;
             cursor: pointer;
             transition: all 0.3s ease;
             position: relative;
         }
 
         .tab-button:hover {
-            background: rgba(102, 126, 234, 0.1);
+            color: #1d1d1f;
+            background-color: #eaeaf0;
         }
 
         .tab-button.active {
-            color: #667eea;
-            background: white;
+            color: #1d1d1f;
+            font-weight: 600;
+            background-color: white;
         }
 
         .tab-button.active::after {
@@ -83,131 +80,107 @@
             position: absolute;
             bottom: -2px;
             left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-        }
-
-        .tab-button .badge {
-            display: inline-block;
-            margin-left: 8px;
-            padding: 2px 8px;
-            background: #34C759;
-            color: white;
-            border-radius: 10px;
-            font-size: 12px;
-        }
-
-        .tab-button .badge.incomplete {
-            background: #FF9500;
+            width: 100%;
+            height: 2px;
+            background-color: #667eea;
         }
 
         .tab-content {
+            padding: 30px;
             display: none;
-            animation: fadeIn 0.3s ease;
+            background-color: white;
         }
 
         .tab-content.active {
             display: block;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .form-content {
-            padding: 30px;
-        }
-
         .form-progress {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 15px 30px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            margin-bottom: 20px;
         }
 
         .progress-bar {
-            height: 4px;
-            background: rgba(102, 126, 234, 0.2);
-            border-radius: 2px;
+            width: 100%;
+            height: 8px;
+            background-color: #e0e0e0;
+            border-radius: 4px;
             overflow: hidden;
         }
 
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            border-radius: 2px;
-            transition: width 0.3s ease;
             width: 0%;
+            background-color: #667eea;
+            transition: width 0.4s ease;
+            border-radius: 4px;
         }
 
         .progress-text {
-            font-size: 12px;
-            color: #8e8e93;
+            text-align: right;
             margin-top: 5px;
-            text-align: center;
+            font-size: 0.9rem;
+            color: #8e8e93;
+        }
+
+        .form-content {
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .section {
+            background-color: #f8f8f8;
+            border-radius: 12px;
+            padding: 15px;
             margin-bottom: 25px;
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
         }
 
         .section-header {
-            background: #f6f6f6;
-            padding: 20px;
             font-weight: 600;
-            color: #1d1d1f;
-            font-size: 18px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e0e0e0;
         }
 
         .form-grid {
             display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
-            padding: 25px;
         }
 
         .form-row {
             display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 15px;
-            background: rgba(246, 246, 246, 0.5);
-            border-radius: 12px;
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            flex-direction: column;
         }
 
         .form-label {
-            font-weight: 600;
-            color: #1d1d1f;
-            font-size: 15px;
-            min-width: 150px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #555;
+            font-size: 0.95rem;
         }
 
         .form-input {
-            background: white;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            border-radius: 12px;
-            padding: 12px 16px;
-            font-size: 14px;
-            transition: all 0.2s ease;
-            flex: 1;
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #dcdcdc;
+            border-radius: 8px;
+            font-size: 1rem;
+            background-color: #fff;
+            transition: border-color 0.3s, box-shadow 0.3s;
         }
 
         .form-input:focus {
             outline: none;
             border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
         }
 
-        .checkbox-group {
+        .checkbox-group, .radio-group {
             display: flex;
-            gap: 15px;
-            align-items: center;
+            gap: 20px;
             flex-wrap: wrap;
         }
 
@@ -217,31 +190,37 @@
             gap: 8px;
         }
 
-        .custom-checkbox {
+        .custom-checkbox, .custom-radio {
+            display: inline-block;
             position: relative;
-            width: 20px;
-            height: 20px;
+            cursor: pointer;
+            user-select: none;
         }
 
-        .custom-checkbox input {
+        .custom-checkbox input, .custom-radio input {
+            position: absolute;
             opacity: 0;
-            position: absolute;
+            cursor: pointer;
+            height: 0;
+            width: 0;
         }
 
-        .checkmark {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .checkmark, .radio-mark {
             height: 20px;
             width: 20px;
-            background: white;
-            border: 2px solid #d1d1d6;
-            border-radius: 6px;
+            background-color: #fff;
+            border: 2px solid #dcdcdc;
+            border-radius: 4px;
             transition: all 0.2s ease;
         }
 
-        .custom-checkbox input:checked ~ .checkmark {
-            background: #667eea;
+        .custom-radio .radio-mark {
+            border-radius: 50%;
+        }
+
+        .custom-checkbox input:checked ~ .checkmark,
+        .custom-radio input:checked ~ .radio-mark {
+            background-color: #667eea;
             border-color: #667eea;
         }
 
@@ -251,146 +230,108 @@
             display: none;
             left: 6px;
             top: 2px;
-            width: 6px;
+            width: 5px;
             height: 10px;
             border: solid white;
-            border-width: 0 2px 2px 0;
+            border-width: 0 3px 3px 0;
             transform: rotate(45deg);
         }
 
         .custom-checkbox input:checked ~ .checkmark:after {
             display: block;
         }
-
-        .radio-group {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-
-        .custom-radio {
-            position: relative;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-        }
-
-        .custom-radio input {
-            opacity: 0;
-            position: absolute;
-        }
-
-        .radio-mark {
-            width: 20px;
-            height: 20px;
-            border: 2px solid #d1d1d6;
-            border-radius: 50%;
-            background: white;
-            transition: all 0.2s ease;
-            position: relative;
-        }
-
-        .custom-radio input:checked ~ .radio-mark {
-            border-color: #667eea;
-        }
-
+        
         .radio-mark:after {
             content: "";
             position: absolute;
+            display: none;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            background: #667eea;
-            opacity: 0;
-            transition: opacity 0.2s ease;
+            background: white;
+            transform: translate(-50%, -50%);
         }
 
         .custom-radio input:checked ~ .radio-mark:after {
-            opacity: 1;
-        }
-
-        .pressure-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            padding: 20px;
-        }
-
-        .pressure-point {
-            text-align: center;
-        }
-
-        .pressure-point label {
             display: block;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #1d1d1f;
-        }
-
-        .pressure-input {
-            width: 100%;
-            padding: 10px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            text-align: center;
-            transition: all 0.2s ease;
-        }
-
-        .pressure-input:focus {
-            border-color: #667eea;
-            outline: none;
         }
 
         .inspection-table {
             width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 0.95rem;
         }
 
-        .inspection-table th,
-        .inspection-table td {
-            padding: 15px;
+        .inspection-table th, .inspection-table td {
+            border: 1px solid #e0e0e0;
+            padding: 12px;
             text-align: left;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .inspection-table th {
-            background: #f6f6f6;
+            background-color: #eaeaf0;
             font-weight: 600;
-            color: #1d1d1f;
-            font-size: 14px;
         }
 
-        .inspection-table tr:hover {
-            background: rgba(102, 126, 234, 0.02);
+        .inspection-table input[type="text"] {
+            width: 100%;
+            border: 1px solid #dcdcdc;
+            border-radius: 6px;
+            padding: 8px;
+            background-color: #fff;
         }
 
         .remarks-input {
             width: 100%;
-            min-height: 60px;
-            background: rgba(246, 246, 246, 0.8);
-            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            border: 1px solid #dcdcdc;
             border-radius: 12px;
-            padding: 12px 16px;
-            font-size: 14px;
-            resize: vertical;
-            transition: all 0.2s ease;
+            min-height: 120px;
+            font-family: inherit;
+            font-size: 1rem;
+            background-color: #fff;
+            transition: border-color 0.3s;
         }
 
         .remarks-input:focus {
             outline: none;
-            background: white;
             border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .approval-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f8f8f8;
+            padding: 15px 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+
+        .approval-title {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .approval-options {
+            display: flex;
+            gap: 25px;
+        }
+
+        .approval-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
         }
 
         .signatures {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 30px;
         }
@@ -400,358 +341,100 @@
         }
 
         .signature-box {
+            width: 100%;
             height: 120px;
-            background: rgba(246, 246, 246, 0.8);
-            border: 2px dashed #d1d1d6;
+            background-color: #fff;
+            border: 2px dashed #dcdcdc;
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 15px;
-            transition: all 0.2s ease;
+            font-style: italic;
             cursor: pointer;
+            transition: all 0.3s ease;
         }
 
         .signature-box:hover {
-            border-color: #667eea;
-            background: rgba(102, 126, 234, 0.05);
+            background-color: #fafafa;
         }
 
         .signature-label {
-            font-weight: 600;
-            color: #1d1d1f;
-            font-size: 14px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #8e8e93;
         }
 
         .action-buttons {
             display: flex;
+            justify-content: flex-end;
             gap: 15px;
             margin-top: 30px;
         }
 
         .btn {
-            flex: 1;
-            padding: 18px;
-            border: none;
-            border-radius: 16px;
-            font-size: 16px;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.2s ease;
+            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-color: #667eea;
             color: white;
-            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
         }
 
         .btn-primary:hover {
+            background-color: #5569d9;
             transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
         }
 
         .btn-secondary {
-            background: #f6f6f6;
-            color: #1d1d1f;
-            border: 2px solid rgba(0, 0, 0, 0.1);
+            background-color: #f0f0f5;
+            color: #333;
         }
 
         .btn-secondary:hover {
-            background: #e8e8e8;
-        }
-
-        .btn-success {
-            background: linear-gradient(135deg, #34C759 0%, #30D158 100%);
-            color: white;
-            box-shadow: 0 4px 20px rgba(52, 199, 89, 0.3);
-        }
-
-        .approval-section {
-            background: linear-gradient(135deg, #34C759 0%, #30D158 100%);
-            border-radius: 16px;
-            padding: 25px;
-            color: white;
-            margin-bottom: 25px;
-        }
-
-        .approval-title {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .approval-options {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-        }
-
-        .approval-option {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 15px 25px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .approval-option:hover {
-            background: rgba(255, 255, 255, 0.3);
+            background-color: #e0e0e5;
             transform: translateY(-2px);
-        }
-
-        .approval-option .radio-mark {
-            border-color: rgba(255, 255, 255, 0.8);
-        }
-
-        .approval-option input:checked ~ .radio-mark {
-            border-color: white;
-        }
-
-        .approval-option .radio-mark:after {
-            background: white;
-        }
-
-        .approval-option span {
-            color: white;
-            font-weight: 600;
-            font-size: 16px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
         }
 
         @media (max-width: 768px) {
-            .tabs-container {
-                flex-direction: column;
+            .tab-button {
+                font-size: 0.9rem;
+                padding: 12px 0;
             }
             
-            .signatures {
+            .form-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .pressure-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
+
             .action-buttons {
                 flex-direction: column;
+                gap: 10px;
             }
-        }
-
-        .notification {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: linear-gradient(135deg, #34C759 0%, #30D158 100%);
-            color: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(52, 199, 89, 0.3);
-            z-index: 1000;
-            text-align: center;
-            backdrop-filter: blur(20px);
-            font-size: 18px;
-            font-weight: 600;
-            animation: successPop 0.5s ease;
-        }
-
-        @keyframes successPop {
-            0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
-            100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-        }
-
-        .status-indicator {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #34C759;
-            margin-right: 8px;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-
-        /* Additional styles for Air Sampling specific elements */
-        .env-conditions {
-            background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);
-            border-radius: 16px;
-            padding: 25px;
-            color: white;
-            margin-bottom: 25px;
-        }
-
-        .env-title {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .env-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .env-item {
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 12px;
-            padding: 20px;
-            backdrop-filter: blur(10px);
-        }
-
-        .env-item h4 {
-            font-size: 16px;
-            margin-bottom: 15px;
-            text-align: center;
-            font-weight: 600;
-        }
-
-        .env-inputs {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .env-input-group {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        .env-input-group label {
-            font-size: 12px;
-            opacity: 0.9;
-        }
-
-        .env-input-group input {
-            background: rgba(255, 255, 255, 0.9);
-            border: none;
-            border-radius: 8px;
-            padding: 10px 12px;
-            font-size: 14px;
-            color: #1d1d1f;
-        }
-
-        .volume-section {
-            background: white;
-            border-radius: 16px;
-            padding: 25px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            margin-bottom: 25px;
-        }
-
-        .volume-title {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: #1d1d1f;
-        }
-
-        .volume-table {
-            display: grid;
-            grid-template-columns: 150px 1fr 1fr;
-            gap: 1px;
-            background: rgba(0, 0, 0, 0.05);
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .volume-header {
-            background: #f6f6f6;
-            padding: 15px;
-            font-weight: 600;
-            font-size: 14px;
-            text-align: center;
-            color: #1d1d1f;
-        }
-
-        .volume-cell {
-            background: white;
-            padding: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .volume-input {
-            background: rgba(246, 246, 246, 0.8);
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            padding: 8px 12px;
-            font-size: 14px;
-            width: 100%;
-            text-align: center;
-        }
-
-        .pdf-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .pdf-loading {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-        }
-
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 5px solid #f3f3f3;
-            border-top: 5px solid #667eea;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
+
     <div class="main-container">
-        <div class="system-header">
-            <h1>🧪 Pollutant Remediation Inspection System</h1>
-            <p>Complete inspection and documentation workflow</p>
+        <header class="system-header">
+            <h1>Pollutant Remediation Inspection System</h1>
+            <p>On-site inspection and reporting form</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-button active" data-tab="initial">Initial Inspection</button>
+            <button class="tab-button" data-tab="during">During Inspection</button>
+            <button class="tab-button" data-tab="final">Final Inspection</button>
         </div>
 
-        <div class="tabs-container">
-            <button class="tab-button active" data-tab="initial">
-                <span class="status-indicator"></span>
-                Initial Inspection
-                <span class="badge incomplete" id="initial-badge">0%</span>
-            </button>
-            <button class="tab-button" data-tab="sampling">
-                Air Sampling
-                <span class="badge incomplete" id="sampling-badge">0%</span>
-            </button>
-            <button class="tab-button" data-tab="final">
-                Final Inspection
-                <span class="badge incomplete" id="final-badge">0%</span>
-            </button>
-        </div>
-
-        <!-- Initial Inspection Tab -->
         <div id="initial-tab" class="tab-content active">
             <div class="form-progress">
                 <div class="progress-bar">
@@ -761,711 +444,8 @@
             </div>
 
             <div class="form-content">
-                <!-- Project Information -->
                 <div class="section">
                     <div class="section-header">Project Information</div>
-                    <div class="form-grid">
-                        <div class="form-row">
-                            <span class="form-label">Project name / code:</span>
-                            <input type="text" class="form-input" id="initial-project-name" placeholder="Enter project name or code">
-                        </div>
-                        <div class="form-row">
-                            <span class="form-label">Location of project:</span>
-                            <input type="text" class="form-input" id="initial-location" placeholder="Enter project location">
-                        </div>
-                        <div class="form-row">
-                            <span class="form-label">Zone #:</span>
-                            <input type="text" class="form-input" id="initial-zone" placeholder="Enter zone number">
-                        </div>
-                        <div class="form-row">
-                            <span class="form-label">Time and date:</span>
-                            <input type="datetime-local" class="form-input" id="initial-datetime">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pollutant Type -->
-                <div class="section">
-                    <div class="section-header">Pollutant Type</div>
-                    <div class="form-grid">
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                            <div>
-                                <h4 style="margin-bottom: 15px; color: #666;">Exposure Level</h4>
-                                <div class="checkbox-group" style="flex-direction: column; align-items: flex-start;">
-                                    <div class="checkbox-item">
-                                        <div class="custom-checkbox">
-                                            <input type="checkbox" id="low-exposure-init">
-                                            <span class="checkmark"></span>
-                                        </div>
-                                        <label for="low-exposure-init">Low exposure</label>
-                                    </div>
-                                    <div class="checkbox-item">
-                                        <div class="custom-checkbox">
-                                            <input type="checkbox" id="limited-scope-init">
-                                            <span class="checkmark"></span>
-                                        </div>
-                                        <label for="limited-scope-init">Limited scope (max. 2 workers for 2 hours)</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <h4 style="margin-bottom: 15px; color: #666;">Remediation Type</h4>
-                                <div class="checkbox-group" style="flex-direction: column; align-items: flex-start;">
-                                    <div class="checkbox-item">
-                                        <div class="custom-checkbox">
-                                            <input type="checkbox" id="removal-init">
-                                            <span class="checkmark"></span>
-                                        </div>
-                                        <label for="removal-init">Removal</label>
-                                    </div>
-                                    <div class="checkbox-item">
-                                        <div class="custom-checkbox">
-                                            <input type="checkbox" id="cleaning-init">
-                                            <span class="checkmark"></span>
-                                        </div>
-                                        <label for="cleaning-init">Cleaning / partial removal</label>
-                                    </div>
-                                    <div class="checkbox-item">
-                                        <div class="custom-checkbox">
-                                            <input type="checkbox" id="coating-init">
-                                            <span class="checkmark"></span>
-                                        </div>
-                                        <label for="coating-init">Coating spatial separation</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Differential Pressure -->
-                <div class="section">
-                    <div class="section-header">Differential Pressure Measurements</div>
-                    <div class="pressure-grid">
-                        <div class="pressure-point">
-                            <label>Point 1</label>
-                            <input type="number" class="pressure-input" placeholder="Pa" step="0.1">
-                        </div>
-                        <div class="pressure-point">
-                            <label>Point 2</label>
-                            <input type="number" class="pressure-input" placeholder="Pa" step="0.1">
-                        </div>
-                        <div class="pressure-point">
-                            <label>Point 3</label>
-                            <input type="number" class="pressure-input" placeholder="Pa" step="0.1">
-                        </div>
-                        <div class="pressure-point">
-                            <label>Point 4</label>
-                            <input type="number" class="pressure-input" placeholder="Pa" step="0.1">
-                        </div>
-                    </div>
-                    <div style="text-align: center; margin-top: 15px;">
-                        <div class="checkbox-item" style="display: inline-flex;">
-                            <div class="custom-checkbox">
-                                <input type="checkbox" id="pressure-na">
-                                <span class="checkmark"></span>
-                            </div>
-                            <label for="pressure-na">Not applicable (∅)</label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Negative Pressure Devices -->
-                <div class="section">
-                    <div class="section-header">1. Negative Pressure Devices</div>
-                    <table class="inspection-table">
-                        <thead>
-                            <tr>
-                                <th style="width: 40%;">Component</th>
-                                <th style="width: 30%;">Status</th>
-                                <th style="width: 30%;">Remarks</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Filter</td>
-                                <td>
-                                    <div class="radio-group">
-                                        <label class="custom-radio">
-                                            <input type="radio" name="npd-filter" value="adequate">
-                                            <span class="radio-mark"></span>
-                                            <span>Adequate</span>
-                                        </label>
-                                        <label class="custom-radio">
-                                            <input type="radio" name="npd-filter" value="na">
-                                            <span class="radio-mark"></span>
-                                            <span>∅</span>
-                                        </label>
-                                    </div>
-                                </td>
-                                <td><input type="text" class="form-input" placeholder="Add remarks..."></td>
-                            </tr>
-                            <tr>
-                                <td>Air exchange</td>
-                                <td>
-                                    <div class="radio-group">
-                                        <label class="custom-radio">
-                                            <input type="radio" name="npd-exchange" value="adequate">
-                                            <span class="radio-mark"></span>
-                                            <span>Adequate</span>
-                                        </label>
-                                        <label class="custom-radio">
-                                            <input type="radio" name="npd-exchange" value="na">
-                                            <span class="radio-mark"></span>
-                                            <span>∅</span>
-                                        </label>
-                                    </div>
-                                </td>
-                                <td><input type="text" class="form-input" placeholder="Add remarks..."></td>
-                            </tr>
-                            <tr>
-                                <td>Air routing</td>
-                                <td>
-                                    <div class="radio-group">
-                                        <label class="custom-radio">
-                                            <input type="radio" name="npd-routing" value="adequate">
-                                            <span class="radio-mark"></span>
-                                            <span>Adequate</span>
-                                        </label>
-                                        <label class="custom-radio">
-                                            <input type="radio" name="npd-routing" value="na">
-                                            <span class="radio-mark"></span>
-                                            <span>∅</span>
-                                        </label>
-                                    </div>
-                                </td>
-                                <td><input type="text" class="form-input" placeholder="Add remarks..."></td>
-                            </tr>
-                            <tr>
-                                <td>Backup / Reserve capacity</td>
-                                <td>
-                                    <div class="checkbox-item">
-                                        <div class="custom-checkbox">
-                                            <input type="checkbox" id="npd-backup">
-                                            <span class="checkmark"></span>
-                                        </div>
-                                        <label for="npd-backup">Available</label>
-                                    </div>
-                                </td>
-                                <td><input type="text" class="form-input" placeholder="Add remarks..."></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- Airlocks -->
-                <div class="section">
-                    <div class="section-header">2. Airlocks</div>
-                    <table class="inspection-table">
-                        <thead>
-                            <tr>
-                                <th style="width: 40%;">Component</th>
-                                <th style="width: 30%;">Status</th>
-                                <th style="width: 30%;">Remarks</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Personnel airlock</td>
-                                <td>
-                                    <div class="radio-group">
-                                        <label class="custom-radio">
-                                            <input type="radio" name="airlock-personnel" value="adequate">
-                                            <span class="radio-mark"></span>
-                                            <span>Adequate</span>
-                                        </label>
-                                        <label class="custom-radio">
-                                            <input type="radio" name="airlock-personnel" value="na">
-                                            <span class="radio-mark"></span>
-                                            <span>∅</span>
-                                        </label>
-                                    </div>
-                                </td>
-                                <td><input type="text" class="form-input" placeholder="Number of locks..."></td>
-                            </tr>
-                            <tr>
-                                <td>Wastewater management</td>
-                                <td>
-                                    <div class="radio-group">
-                                        <label class="custom-radio">
-                                            <input type="radio" name="airlock-wastewater" value="adequate">
-                                            <span class="radio-mark"></span>
-                                            <span>Adequate</span>
-                                        </label>
-                                        <label class="custom-radio">
-                                            <input type="radio" name="airlock-wastewater" value="na">
-                                            <span class="radio-mark"></span>
-                                            <span>∅</span>
-                                        </label>
-                                    </div>
-                                </td>
-                                <td><input type="text" class="form-input" placeholder="Add remarks..."></td>
-                            </tr>
-                            <tr>
-                                <td>Material airlock</td>
-                                <td>
-                                    <div class="radio-group">
-                                        <label class="custom-radio">
-                                            <input type="radio" name="airlock-material" value="adequate">
-                                            <span class="radio-mark"></span>
-                                            <span>Adequate</span>
-                                        </label>
-                                        <label class="custom-radio">
-                                            <input type="radio" name="airlock-material" value="na">
-                                            <span class="radio-mark"></span>
-                                            <span>∅</span>
-                                        </label>
-                                    </div>
-                                </td>
-                                <td><input type="text" class="form-input" placeholder="Add remarks..."></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- Partitioning/Encapsulation -->
-                <div class="section">
-                    <div class="section-header">3. Partitioning / Encapsulation</div>
-                    <table class="inspection-table">
-                        <thead>
-                            <tr>
-                                <th style="width: 40%;">Component</th>
-                                <th style="width: 30%;">Status</th>
-                                <th style="width: 30%;">Remarks</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Connections to structures</td>
-                                <td>
-                                    <div class="radio-group">
-                                        <label class="custom-radio">
-                                            <input type="radio" name="part-connections" value="adequate">
-                                            <span class="radio-mark"></span>
-                                            <span>Adequate</span>
-                                        </label>
-                                        <label class="custom-radio">
-                                            <input type="radio" name="part-connections" value="na">
-                                            <span class="radio-mark"></span>
-                                            <span>∅</span>
-                                        </label>
-                                    </div>
-                                </td>
-                                <td><input type="text" class="form-input" placeholder="Add remarks..."></td>
-                            </tr>
-                            <tr>
-                                <td>Stability</td>
-                                <td>
-                                    <div class="radio-group">
-                                        <label class="custom-radio">
-                                            <input type="radio" name="part-stability" value="adequate">
-                                            <span class="radio-mark"></span>
-                                            <span>Adequate</span>
-                                        </label>
-                                        <label class="custom-radio">
-                                            <input type="radio" name="part-stability" value="na">
-                                            <span class="radio-mark"></span>
-                                            <span>∅</span>
-                                        </label>
-                                    </div>
-                                </td>
-                                <td><input type="text" class="form-input" placeholder="Add remarks..."></td>
-                            </tr>
-                            <tr>
-                                <td>Airtightness</td>
-                                <td>
-                                    <div class="radio-group">
-                                        <label class="custom-radio">
-                                            <input type="radio" name="part-airtightness" value="adequate">
-                                            <span class="radio-mark"></span>
-                                            <span>Adequate</span>
-                                        </label>
-                                        <label class="custom-radio">
-                                            <input type="radio" name="part-airtightness" value="na">
-                                            <span class="radio-mark"></span>
-                                            <span>∅</span>
-                                        </label>
-                                    </div>
-                                </td>
-                                <td><input type="text" class="form-input" placeholder="Add remarks..."></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- Miscellaneous -->
-                <div class="section">
-                    <div class="section-header">4. Miscellaneous</div>
-                    <table class="inspection-table">
-                        <thead>
-                            <tr>
-                                <th style="width: 40%;">Component</th>
-                                <th style="width: 30%;">Status</th>
-                                <th style="width: 30%;">Remarks</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Access control</td>
-                                <td>
-                                    <div class="radio-group">
-                                        <label class="custom-radio">
-                                            <input type="radio" name="misc-access" value="adequate">
-                                            <span class="radio-mark"></span>
-                                            <span>Adequate</span>
-                                        </label>
-                                        <label class="custom-radio">
-                                            <input type="radio" name="misc-access" value="na">
-                                            <span class="radio-mark"></span>
-                                            <span>∅</span>
-                                        </label>
-                                    </div>
-                                </td>
-                                <td><input type="text" class="form-input" placeholder="Add remarks..."></td>
-                            </tr>
-                            <tr>
-                                <td>Signage of work zone</td>
-                                <td>
-                                    <div class="radio-group">
-                                        <label class="custom-radio">
-                                            <input type="radio" name="misc-signage" value="adequate">
-                                            <span class="radio-mark"></span>
-                                            <span>Adequate</span>
-                                        </label>
-                                        <label class="custom-radio">
-                                            <input type="radio" name="misc-signage" value="na">
-                                            <span class="radio-mark"></span>
-                                            <span>∅</span>
-                                        </label>
-                                    </div>
-                                </td>
-                                <td><input type="text" class="form-input" placeholder="Add remarks..."></td>
-                            </tr>
-                            <tr>
-                                <td>Safety briefings</td>
-                                <td>
-                                    <div class="radio-group">
-                                        <label class="custom-radio">
-                                            <input type="radio" name="misc-safety" value="adequate">
-                                            <span class="radio-mark"></span>
-                                            <span>Adequate</span>
-                                        </label>
-                                        <label class="custom-radio">
-                                            <input type="radio" name="misc-safety" value="na">
-                                            <span class="radio-mark"></span>
-                                            <span>∅</span>
-                                        </label>
-                                    </div>
-                                </td>
-                                <td><input type="text" class="form-input" placeholder="Add remarks..."></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- Comments -->
-                <div class="section">
-                    <div class="section-header">5. Comments</div>
-                    <div style="padding: 20px;">
-                        <textarea class="remarks-input" style="min-height: 100px;" placeholder="Enter any additional comments or observations..."></textarea>
-                    </div>
-                </div>
-
-                <!-- Approval Section -->
-                <div class="approval-section">
-                    <div class="approval-title">6. Approval to Start the Remediation</div>
-                    <div class="approval-options">
-                        <label class="approval-option">
-                            <input type="radio" name="initial-approval" value="approved">
-                            <span class="radio-mark"></span>
-                            <span>Approved</span>
-                        </label>
-                        <label class="approval-option">
-                            <input type="radio" name="initial-approval" value="not-approved">
-                            <span class="radio-mark"></span>
-                            <span>Not Approved</span>
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Signatures -->
-                <div class="signatures">
-                    <div class="signature-field">
-                        <div class="signature-box" onclick="openSignaturePad('initial-supervisor')">
-                            <span style="color: #8e8e93;">Tap to sign</span>
-                        </div>
-                        <div class="signature-label">Signature of supervisor</div>
-                    </div>
-                    <div class="signature-field">
-                        <div class="signature-box" onclick="openSignaturePad('initial-contractor')">
-                            <span style="color: #8e8e93;">Tap to sign</span>
-                        </div>
-                        <div class="signature-label">Signature of contractor representative</div>
-                    </div>
-                </div>
-
-                <!-- Action Buttons -->
-                <div class="action-buttons">
-                    <button class="btn btn-secondary" onclick="generatePDF('initial')">
-                        📄 Export as PDF
-                    </button>
-                    <button class="btn btn-primary" onclick="saveForm('initial')">
-                        💾 Save Form
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Air Sampling Tab -->
-        <div id="sampling-tab" class="tab-content">
-            <div class="form-progress">
-                <div class="progress-bar">
-                    <div class="progress-fill" id="sampling-progress"></div>
-                </div>
-                <div class="progress-text" id="sampling-progress-text">Form completion: 0%</div>
-            </div>
-
-            <div class="form-content">
-                <!-- Project Information -->
-                <div class="section">
-                    <div class="form-grid">
-                        <div class="form-row">
-                            <span class="form-label">Project name / code:</span>
-                            <input type="text" class="form-input" placeholder="Enter project name or code">
-                        </div>
-                        <div class="form-row">
-                            <span class="form-label">Location of project:</span>
-                            <input type="text" class="form-input" placeholder="Enter project location">
-                        </div>
-                        <div class="form-row">
-                            <span class="form-label">Sample no.:</span>
-                            <input type="text" class="form-input" placeholder="Enter sample number">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sampling Device -->
-                <div class="section">
-                    <div class="section-header">Sampling Device</div>
-                    <div class="form-grid">
-                        <div class="form-row">
-                            <span class="form-label">Sampling device:</span>
-                            <div class="checkbox-group">
-                                <div class="checkbox-item">
-                                    <div class="custom-checkbox">
-                                        <input type="checkbox" id="pna800">
-                                        <span class="checkmark"></span>
-                                    </div>
-                                    <label for="pna800">PNA 800</label>
-                                </div>
-                                <div class="checkbox-item">
-                                    <div class="custom-checkbox">
-                                        <input type="checkbox" id="pna384n">
-                                        <span class="checkmark"></span>
-                                    </div>
-                                    <label for="pna384n">PNA 384N</label>
-                                </div>
-                                <div class="checkbox-item">
-                                    <div class="custom-checkbox">
-                                        <input type="checkbox" id="sg12">
-                                        <span class="checkmark"></span>
-                                    </div>
-                                    <label for="sg12">SG 12</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <span class="form-label">Device No.:</span>
-                            <input type="text" class="form-input" placeholder="Enter device number">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sampling Time -->
-                <div class="section">
-                    <div class="section-header">Sampling Time & Duration</div>
-                    <div class="form-grid">
-                        <div class="form-row">
-                            <span class="form-label">Sampling Date:</span>
-                            <input type="date" class="form-input">
-                        </div>
-                        <div class="form-row">
-                            <span class="form-label">Time period from:</span>
-                            <div style="display: flex; gap: 10px; align-items: center;">
-                                <input type="time" class="form-input" style="max-width: 120px;">
-                                <span>to</span>
-                                <input type="time" class="form-input" style="max-width: 120px;">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <span class="form-label">Sampling duration:</span>
-                            <div class="checkbox-group">
-                                <div class="checkbox-item">
-                                    <div class="custom-checkbox">
-                                        <input type="checkbox" id="duration-8hrs">
-                                        <span class="checkmark"></span>
-                                    </div>
-                                    <label for="duration-8hrs">8:00 hrs</label>
-                                </div>
-                                <div style="display: flex; gap: 10px; align-items: center;">
-                                    <input type="number" class="form-input" style="width: 80px;" placeholder="0" min="0" max="23">
-                                    <span>hrs</span>
-                                    <input type="number" class="form-input" style="width: 80px;" placeholder="0" min="0" max="59">
-                                    <span>min</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Environmental Conditions -->
-                <div class="env-conditions">
-                    <div class="env-title">Environmental conditions</div>
-                    <div class="env-grid">
-                        <div class="env-item">
-                            <h4>At start of sampling</h4>
-                            <div class="env-inputs">
-                                <div class="env-input-group">
-                                    <label>Temperature [°C]</label>
-                                    <input type="number" placeholder="°C" step="0.1">
-                                </div>
-                                <div class="env-input-group">
-                                    <label>Humidity [%]</label>
-                                    <input type="number" placeholder="%" min="0" max="100">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="env-item">
-                            <h4>At end of sampling</h4>
-                            <div class="env-inputs">
-                                <div class="env-input-group">
-                                    <label>Temperature [°C]</label>
-                                    <input type="number" placeholder="°C" step="0.1">
-                                </div>
-                                <div class="env-input-group">
-                                    <label>Humidity [%]</label>
-                                    <input type="number" placeholder="%" min="0" max="100">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sample Volume -->
-                <div class="volume-section">
-                    <div class="volume-title">Sample volume</div>
-                    <div class="volume-table">
-                        <div class="volume-header">Measurement Point</div>
-                        <div class="volume-header">Total volume count [m³]</div>
-                        <div class="volume-header">Flow rate</div>
-                        
-                        <div class="volume-cell">
-                            <strong>(A) at start of sampling</strong>
-                        </div>
-                        <div class="volume-cell">
-                            <input type="number" class="volume-input" placeholder="000.000" step="0.001">
-                        </div>
-                        <div class="volume-cell">
-                            <div style="display: flex; align-items: center; gap: 10px;">
-                                <input type="number" class="volume-input" placeholder="Flow rate" step="0.1">
-                                <span>litres/min</span>
-                            </div>
-                        </div>
-                        
-                        <div class="volume-cell">
-                            <strong>(B) at end of sampling</strong>
-                        </div>
-                        <div class="volume-cell">
-                            <input type="number" class="volume-input" placeholder="000.000" step="0.001" id="volume-end">
-                        </div>
-                        <div class="volume-cell">
-                            <span style="color: #8e8e93;">—</span>
-                        </div>
-                        
-                        <div class="volume-cell">
-                            <strong>Throughput (=B-A):</strong>
-                        </div>
-                        <div class="volume-cell">
-                            <input type="number" class="volume-input" placeholder="000.000" step="0.001" readonly id="volume-throughput">
-                        </div>
-                        <div class="volume-cell">
-                            <span style="color: #8e8e93;">—</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Visual Inspection -->
-                <div class="section" style="background: linear-gradient(135deg, #A8E6CF 0%, #88D8A3 100%); color: #2d5a27;">
-                    <div style="padding: 25px;">
-                        <div style="font-size: 18px; font-weight: 600; margin-bottom: 20px; text-align: center;">
-                            Visual inspection before sampling was performed
-                        </div>
-                        <div style="display: flex; justify-content: center; gap: 30px;">
-                            <label class="custom-radio" style="background: rgba(255, 255, 255, 0.3); padding: 15px 25px; border-radius: 12px;">
-                                <input type="radio" name="visual-inspection-sampling" value="yes" onchange="toggleInspectionTime()">
-                                <span class="radio-mark" style="border-color: rgba(45, 90, 39, 0.6);"></span>
-                                <span style="color: #2d5a27; font-weight: 600;">Yes, at</span>
-                            </label>
-                            <label class="custom-radio" style="background: rgba(255, 255, 255, 0.3); padding: 15px 25px; border-radius: 12px;">
-                                <input type="radio" name="visual-inspection-sampling" value="no" onchange="toggleInspectionTime()">
-                                <span class="radio-mark" style="border-color: rgba(45, 90, 39, 0.6);"></span>
-                                <span style="color: #2d5a27; font-weight: 600;">No</span>
-                            </label>
-                        </div>
-                        <div id="inspection-time-field" style="display: none; margin-top: 15px; background: rgba(255, 255, 255, 0.3); border-radius: 12px; padding: 15px;">
-                            <input type="time" class="form-input" style="width: 100%; text-align: center;">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Comments -->
-                <div class="section">
-                    <div class="section-header">Comments</div>
-                    <div style="padding: 20px;">
-                        <textarea class="remarks-input" style="min-height: 100px;" placeholder="Enter any additional comments or observations about the sampling process..."></textarea>
-                    </div>
-                </div>
-
-                <!-- Signatures -->
-                <div class="signatures">
-                    <div class="signature-field">
-                        <div class="signature-box" onclick="openSignaturePad('sampling-mounting')">
-                            <span style="color: #8e8e93;">Tap to sign</span>
-                        </div>
-                        <div class="signature-label">Sampling mounted by<br>Technician (Name, Signature)</div>
-                    </div>
-                    <div class="signature-field">
-                        <div class="signature-box" onclick="openSignaturePad('sampling-dismounting')">
-                            <span style="color: #8e8e93;">Tap to sign</span>
-                        </div>
-                        <div class="signature-label">Sampling dismounted by<br>Technician (Name, Signature)</div>
-                    </div>
-                </div>
-
-                <!-- Action Buttons -->
-                <div class="action-buttons">
-                    <button class="btn btn-secondary" onclick="generatePDF('sampling')">
-                        📄 Export as PDF
-                    </button>
-                    <button class="btn btn-primary" onclick="saveForm('sampling')">
-                        💾 Save Protocol
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Final Inspection Tab -->
-        <div id="final-tab" class="tab-content">
-            <div class="form-progress">
-                <div class="progress-bar">
-                    <div class="progress-fill" id="final-progress"></div>
-                </div>
-                <div class="progress-text" id="final-progress-text">Form completion: 0%</div>
-            </div>
-
-            <div class="form-content">
-                <!-- Project Information -->
-                <div class="section">
                     <div class="form-grid">
                         <div class="form-row">
                             <span class="form-label">Project name / code:</span>
@@ -1486,11 +466,336 @@
                     </div>
                 </div>
 
-                <!-- Pollutant Type -->
                 <div class="section">
-                    <div class="section-header">Pollutant type</div>
+                    <div class="section-header">Pollutant Type</div>
                     <div style="padding: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                         <div>
+                            <h4 style="margin-bottom: 15px; color: #666;">Exposure Level</h4>
+                            <div class="checkbox-group" style="flex-direction: column; align-items: flex-start;">
+                                <div class="checkbox-item">
+                                    <div class="custom-checkbox">
+                                        <input type="checkbox" id="initial-low-exposure">
+                                        <span class="checkmark"></span>
+                                    </div>
+                                    <label for="initial-low-exposure">Low exposure</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <div class="custom-checkbox">
+                                        <input type="checkbox" id="initial-limited-scope">
+                                        <span class="checkmark"></span>
+                                    </div>
+                                    <label for="initial-limited-scope">Limited scope (max. 2 workers for 2 hours)</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 15px; color: #666;">Remediation Type</h4>
+                            <div class="checkbox-group" style="flex-direction: column; align-items: flex-start;">
+                                <div class="checkbox-item">
+                                    <div class="custom-checkbox">
+                                        <input type="checkbox" id="initial-removal">
+                                        <span class="checkmark"></span>
+                                    </div>
+                                    <label for="initial-removal">Removal</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <div class="custom-checkbox">
+                                        <input type="checkbox" id="initial-cleaning">
+                                        <span class="checkmark"></span>
+                                    </div>
+                                    <label for="initial-cleaning">Cleaning / partial removal</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <div class="custom-checkbox">
+                                        <input type="checkbox" id="initial-coating">
+                                        <span class="checkmark"></span>
+                                    </div>
+                                    <label for="initial-coating">Coating spatial separation</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-header">1. Inspection of work area</div>
+                    <table class="inspection-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 5%;"></th>
+                                <th style="width: 50%;">Component</th>
+                                <th style="width: 25%;">Status</th>
+                                <th style="width: 20%;">Remarks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="custom-checkbox">
+                                        <input type="checkbox" id="work-proc-defined">
+                                        <span class="checkmark"></span>
+                                    </div>
+                                </td>
+                                <td>Work procedures are defined and available</td>
+                                <td>
+                                    <div class="radio-group">
+                                        <label class="custom-radio">
+                                            <input type="radio" name="work-proc-status" value="yes">
+                                            <span class="radio-mark"></span>
+                                            <span>Yes</span>
+                                        </label>
+                                        <label class="custom-radio">
+                                            <input type="radio" name="work-proc-status" value="no">
+                                            <span class="radio-mark"></span>
+                                            <span>No</span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td><input type="text" class="form-input" placeholder="Add remarks..."></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="custom-checkbox">
+                                        <input type="checkbox" id="work-area-defined">
+                                        <span class="checkmark"></span>
+                                    </div>
+                                </td>
+                                <td>Work area is defined, clear, and secured</td>
+                                <td>
+                                    <div class="radio-group">
+                                        <label class="custom-radio">
+                                            <input type="radio" name="work-area-status" value="yes">
+                                            <span class="radio-mark"></span>
+                                            <span>Yes</span>
+                                        </label>
+                                        <label class="custom-radio">
+                                            <input type="radio" name="work-area-status" value="no">
+                                            <span class="radio-mark"></span>
+                                            <span>No</span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td><input type="text" class="form-input" placeholder="Add remarks..."></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="custom-checkbox">
+                                        <input type="checkbox" id="ppe-available">
+                                        <span class="checkmark"></span>
+                                    </div>
+                                </td>
+                                <td>PPE is available and in working condition</td>
+                                <td>
+                                    <div class="radio-group">
+                                        <label class="custom-radio">
+                                            <input type="radio" name="ppe-status" value="yes">
+                                            <span class="radio-mark"></span>
+                                            <span>Yes</span>
+                                        </label>
+                                        <label class="custom-radio">
+                                            <input type="radio" name="ppe-status" value="no">
+                                            <span class="radio-mark"></span>
+                                            <span>No</span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td><input type="text" class="form-input" placeholder="Add remarks..."></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="section">
+                    <div class="section-header">2. Comments</div>
+                    <div style="padding: 20px;">
+                        <textarea class="remarks-input" style="min-height: 100px;" placeholder="Enter any additional comments or observations..."></textarea>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-secondary" onclick="generatePDF('initial')">
+                        📄 Export as PDF
+                    </button>
+                    <button class="btn btn-primary" onclick="saveForm('initial')">
+                        💾 Save Form
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="during-tab" class="tab-content">
+            <div class="form-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="during-progress"></div>
+                </div>
+                <div class="progress-text" id="during-progress-text">Form completion: 0%</div>
+            </div>
+
+            <div class="form-content">
+                <div class="section">
+                    <div class="section-header">Project Information</div>
+                    <div class="form-grid">
+                        <div class="form-row">
+                            <span class="form-label">Project name / code:</span>
+                            <input type="text" class="form-input" placeholder="Enter project name or code">
+                        </div>
+                        <div class="form-row">
+                            <span class="form-label">Location of project:</span>
+                            <input type="text" class="form-input" placeholder="Enter project location">
+                        </div>
+                        <div class="form-row">
+                            <span class="form-label">Zone #:</span>
+                            <input type="text" class="form-input" placeholder="Enter zone number">
+                        </div>
+                        <div class="form-row">
+                            <span class="form-label">Time and date:</span>
+                            <input type="datetime-local" class="form-input">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-header">1. Work procedures carried out by contractor</div>
+                    <table class="inspection-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 5%;"></th>
+                                <th style="width: 50%;">Component</th>
+                                <th style="width: 25%;">Status</th>
+                                <th style="width: 20%;">Remarks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="custom-checkbox">
+                                        <input type="checkbox" id="during-partitioning">
+                                        <span class="checkmark"></span>
+                                    </div>
+                                </td>
+                                <td>Partitioning, airlock and regulated airflow are intact</td>
+                                <td>
+                                    <div class="radio-group">
+                                        <label class="custom-radio">
+                                            <input type="radio" name="during-part-status" value="yes">
+                                            <span class="radio-mark"></span>
+                                            <span>Yes</span>
+                                        </label>
+                                        <label class="custom-radio">
+                                            <input type="radio" name="during-part-status" value="no">
+                                            <span class="radio-mark"></span>
+                                            <span>No</span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td><input type="text" class="form-input" placeholder="Add remarks..."></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="custom-checkbox">
+                                        <input type="checkbox" id="during-ppe">
+                                        <span class="checkmark"></span>
+                                    </div>
+                                </td>
+                                <td>PPE is used as defined</td>
+                                <td>
+                                    <div class="radio-group">
+                                        <label class="custom-radio">
+                                            <input type="radio" name="during-ppe-status" value="yes">
+                                            <span class="radio-mark"></span>
+                                            <span>Yes</span>
+                                        </label>
+                                        <label class="custom-radio">
+                                            <input type="radio" name="during-ppe-status" value="no">
+                                            <span class="radio-mark"></span>
+                                            <span>No</span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td><input type="text" class="form-input" placeholder="Add remarks..."></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="custom-checkbox">
+                                        <input type="checkbox" id="during-disposal">
+                                        <span class="checkmark"></span>
+                                    </div>
+                                </td>
+                                <td>Pollutant is handled and disposed of as defined</td>
+                                <td>
+                                    <div class="radio-group">
+                                        <label class="custom-radio">
+                                            <input type="radio" name="during-disposal-status" value="yes">
+                                            <span class="radio-mark"></span>
+                                            <span>Yes</span>
+                                        </label>
+                                        <label class="custom-radio">
+                                            <input type="radio" name="during-disposal-status" value="no">
+                                            <span class="radio-mark"></span>
+                                            <span>No</span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td><input type="text" class="form-input" placeholder="Add remarks..."></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="section">
+                    <div class="section-header">2. Comments</div>
+                    <div style="padding: 20px;">
+                        <textarea class="remarks-input" style="min-height: 100px;" placeholder="Enter any additional comments or observations..."></textarea>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-secondary" onclick="generatePDF('during')">
+                        📄 Export as PDF
+                    </button>
+                    <button class="btn btn-primary" onclick="saveForm('during')">
+                        💾 Save Form
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="final-tab" class="tab-content">
+            <div class="form-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="final-progress"></div>
+                </div>
+                <div class="progress-text" id="final-progress-text">Form completion: 0%</div>
+            </div>
+
+            <div class="form-content">
+                <div class="section">
+                    <div class="section-header">Project Information</div>
+                    <div class="form-grid">
+                        <div class="form-row">
+                            <span class="form-label">Project name / code:</span>
+                            <input type="text" class="form-input" placeholder="Enter project name or code">
+                        </div>
+                        <div class="form-row">
+                            <span class="form-label">Location of project:</span>
+                            <input type="text" class="form-input" placeholder="Enter project location">
+                        </div>
+                        <div class="form-row">
+                            <span class="form-label">Zone #:</span>
+                            <input type="text" class="form-input" placeholder="Enter zone number">
+                        </div>
+                        <div class="form-row">
+                            <span class="form-label">Time and date:</span>
+                            <input type="datetime-local" class="form-input">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-header">Pollutant Type</div>
+                    <div style="padding: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div>
+                            <h4 style="margin-bottom: 15px; color: #666;">Exposure Level</h4>
                             <div class="checkbox-group" style="flex-direction: column; align-items: flex-start;">
                                 <div class="checkbox-item">
                                     <div class="custom-checkbox">
@@ -1509,6 +814,7 @@
                             </div>
                         </div>
                         <div>
+                            <h4 style="margin-bottom: 15px; color: #666;">Remediation Type</h4>
                             <div class="checkbox-group" style="flex-direction: column; align-items: flex-start;">
                                 <div class="checkbox-item">
                                     <div class="custom-checkbox">
@@ -1536,7 +842,6 @@
                     </div>
                 </div>
 
-                <!-- Work Procedures -->
                 <div class="section">
                     <div class="section-header">1. Work procedures carried out by contractor</div>
                     <table class="inspection-table">
@@ -1596,7 +901,173 @@
                                     <div class="custom-checkbox">
                                         <input type="checkbox" id="proc-surfaces">
                                         <span class="checkmark"></span>
-                                    
+                                    </div>
+                                </td>
+                                <td>Adjacent surfaces were cleaned and freed from dust</td>
+                                <td><input type="text" class="form-input" placeholder="Cleaning method..."></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="custom-checkbox">
+                                        <input type="checkbox" id="proc-encapsulation">
+                                        <span class="checkmark"></span>
+                                    </div>
+                                </td>
+                                <td>Final encapsulation of entire area by:</td>
+                                <td><input type="text" class="form-input" placeholder="Encapsulation method..."></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="custom-checkbox">
+                                        <input type="checkbox" id="proc-documentation">
+                                        <span class="checkmark"></span>
+                                    </div>
+                                </td>
+                                <td>Documentation by contractor:</td>
+                                <td><input type="text" class="form-input" placeholder="Add documentation details..."></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="section">
+                    <div class="section-header">2. Visual inspection of work area</div>
+                    <table class="inspection-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 5%;"></th>
+                                <th style="width: 50%;">Component</th>
+                                <th style="width: 25%;">Status</th>
+                                <th style="width: 20%;">Remarks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="custom-checkbox">
+                                        <input type="checkbox" id="visual-dust">
+                                        <span class="checkmark"></span>
+                                    </div>
+                                </td>
+                                <td>No remaining dust</td>
+                                <td>
+                                    <div class="radio-group">
+                                        <label class="custom-radio">
+                                            <input type="radio" name="visual-dust-status" value="yes">
+                                            <span class="radio-mark"></span>
+                                            <span>Yes</span>
+                                        </label>
+                                        <label class="custom-radio">
+                                            <input type="radio" name="visual-dust-status" value="no">
+                                            <span class="radio-mark"></span>
+                                            <span>No</span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td><input type="text" class="form-input" placeholder="Add remarks..."></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="custom-checkbox">
+                                        <input type="checkbox" id="visual-surface">
+                                        <span class="checkmark"></span>
+                                    </div>
+                                </td>
+                                <td>Surfaces are sealed and clean</td>
+                                <td>
+                                    <div class="radio-group">
+                                        <label class="custom-radio">
+                                            <input type="radio" name="visual-surface-status" value="yes">
+                                            <span class="radio-mark"></span>
+                                            <span>Yes</span>
+                                        </label>
+                                        <label class="custom-radio">
+                                            <input type="radio" name="visual-surface-status" value="no">
+                                            <span class="radio-mark"></span>
+                                            <span>No</span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td><input type="text" class="form-input" placeholder="Add remarks..."></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="custom-checkbox">
+                                        <input type="checkbox" id="visual-partitioning">
+                                        <span class="checkmark"></span>
+                                    </div>
+                                </td>
+                                <td>Partitioning / encapsulation is intact</td>
+                                <td>
+                                    <div class="radio-group">
+                                        <label class="custom-radio">
+                                            <input type="radio" name="visual-part-status" value="yes">
+                                            <span class="radio-mark"></span>
+                                            <span>Yes</span>
+                                        </label>
+                                        <label class="custom-radio">
+                                            <input type="radio" name="visual-part-status" value="no">
+                                            <span class="radio-mark"></span>
+                                            <span>No</span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td><input type="text" class="form-input" placeholder="Add remarks..."></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="section">
+                    <div class="section-header">3. Comments</div>
+                    <div style="padding: 20px;">
+                        <textarea class="remarks-input" style="min-height: 100px;" placeholder="Enter any additional comments or observations..."></textarea>
+                    </div>
+                </div>
+
+                <div class="approval-section">
+                    <div class="approval-title">4. Final Approval</div>
+                    <div class="approval-options">
+                        <label class="approval-option">
+                            <input type="radio" name="final-approval" value="approved">
+                            <span class="radio-mark"></span>
+                            <span>Approved</span>
+                        </label>
+                        <label class="approval-option">
+                            <input type="radio" name="final-approval" value="not-approved">
+                            <span class="radio-mark"></span>
+                            <span>Not Approved</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="signatures">
+                    <div class="signature-field">
+                        <div class="signature-box" onclick="openSignaturePad('final-supervisor')">
+                            <span style="color: #8e8e93;">Tap to sign</span>
+                        </div>
+                        <div class="signature-label">Signature of supervisor</div>
+                    </div>
+                    <div class="signature-field">
+                        <div class="signature-box" onclick="openSignaturePad('final-contractor')">
+                            <span style="color: #8e8e93;">Tap to sign</span>
+                        </div>
+                        <div class="signature-label">Signature of contractor representative</div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-secondary" onclick="generatePDF('final')">
+                        📄 Export as PDF
+                    </button>
+                    <button class="btn btn-primary" onclick="saveForm('final')">
+                        💾 Save Form
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
     document.addEventListener("DOMContentLoaded", () => {
         const buttons = document.querySelectorAll(".tab-button");
@@ -1604,14 +1075,9 @@
 
         buttons.forEach(button => {
             button.addEventListener("click", () => {
-                // убрать active со всех кнопок и вкладок
                 buttons.forEach(b => b.classList.remove("active"));
                 contents.forEach(c => c.classList.remove("active"));
-
-                // активировать выбранную кнопку
                 button.classList.add("active");
-
-                // активировать связанную вкладку
                 const tabId = button.getAttribute("data-tab") + "-tab";
                 const targetTab = document.getElementById(tabId);
                 if (targetTab) {
@@ -1620,4 +1086,20 @@
             });
         });
     });
+
+    function generatePDF(formId) {
+        alert("📄 PDF generation for form: " + formId + " is not implemented yet.");
+        // Здесь можно подключить jsPDF или html2pdf.js
+    }
+
+    function saveForm(formId) {
+        alert("💾 Saving form: " + formId + " (demo, stored in localStorage)");
+        const form = document.getElementById(formId + "-tab");
+        if (form) {
+            localStorage.setItem(formId + "-form", form.innerHTML);
+        }
+    }
     </script>
+
+</body>
+</html>
